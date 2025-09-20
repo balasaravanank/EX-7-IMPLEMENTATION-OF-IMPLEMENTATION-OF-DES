@@ -25,8 +25,46 @@ To Perform Decryption:
 
 
 ## PROGRAM:
+```
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char message[256], key[256], encrypted[256], decrypted[256];
+    int i, msgLen, keyLen;
+
+    printf("Enter the plaintext message: ");
+    fgets(message, sizeof(message), stdin);
+    message[strcspn(message, "\n")] = '\0';
+
+    printf("Enter the key: ");
+    fgets(key, sizeof(key), stdin);
+    key[strcspn(key, "\n")] = '\0';
+
+    msgLen = strlen(message);
+    keyLen = strlen(key);
+
+    for (i = 0; i < msgLen; i++)
+        encrypted[i] = message[i] ^ key[i % keyLen];
+    encrypted[msgLen] = '\0';
+
+    printf("\nEncrypted message (in hex): ");
+    for (i = 0; i < msgLen; i++)
+        printf("%02X ", (unsigned char)encrypted[i]);
+
+    for (i = 0; i < msgLen; i++)
+        decrypted[i] = encrypted[i] ^ key[i % keyLen];
+    decrypted[msgLen] = '\0';
+
+    printf("\nDecrypted message: %s\n", decrypted);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
+<img width="1298" height="280" alt="image" src="https://github.com/user-attachments/assets/8d008cfb-6bca-4904-a4e6-957e8692a81e" />
+
 
 ## Result:
 The program implementing the Data Encryption Standard (DES) for encryption and decryption	has	been	successfully	executed,	and	the	results	have	been	verified.
