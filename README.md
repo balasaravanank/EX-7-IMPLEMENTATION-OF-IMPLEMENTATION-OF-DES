@@ -63,7 +63,8 @@ int main() {
 ```
 
 ## OUTPUT:
-<img width="1298" height="280" alt="image" src="https://github.com/user-attachments/assets/8d008cfb-6bca-4904-a4e6-957e8692a81e" />
+<img width="3417" height="1457" alt="image" src="https://github.com/user-attachments/assets/eaf2d12e-037d-49e2-83c5-237351d02d93" />
+
 
 
 ## Result:
